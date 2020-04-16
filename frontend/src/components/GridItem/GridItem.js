@@ -6,6 +6,7 @@ const GridItem = props => {
   return (
     <div>
       <p>{recipe.name}</p>
+      <p>{recipe.ingredients}</p>
     </div>
   );
 };
