@@ -1,0 +1,12 @@
+.grid {
+  display: flex;
+  flex: 50%;
+  justify-content: space-evenly;
+
+  .gridItem {
+    :hover {
+      color: blue;
+      cursor: pointer;
+    }
+  }
+}

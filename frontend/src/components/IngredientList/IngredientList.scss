@@ -1,0 +1,43 @@
+.ingredientsSection {
+  margin-top: 50px;
+
+  .ingredient-row {
+    display: flex;
+    justify-items: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-left: 10%;
+    margin-right: 20%;
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 8px 2px;
+    font-size: 18px;
+
+    .ingredient-info {
+      margin: auto;
+      width: 100%;
+    }
+
+    .buttons {
+      display: flex;
+      height: 30px;
+
+      .x-button {
+        margin-right: 5px;
+        width: 80px;
+        background-color: rgb(231, 38, 38);
+        border-radius: 8px;
+        color: white;
+        font-weight: bold;
+      }
+
+      .edit-button {
+        width: 80px;
+        background-color: rgb(0, 110, 255);
+        border-radius: 8px;
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
+}
