@@ -23,10 +23,11 @@ const GridItem = props => {
   return (
     <RecipeProvider>
       <div className="grid-card" onClick={handleClick}>
+        <img src={recipe.image} />
         <div className="item-name">
-          <p>{recipe.name}</p>
+          <h3>{recipe.name}</h3>
         </div>
-        <div className="ingredientList">{ingredients}</div>
+        <div className="ingredients-list">{ingredients}</div>
       </div>
     </RecipeProvider>
   );

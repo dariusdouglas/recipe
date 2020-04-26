@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { RecipeContext } from '../../context/index';
-import '../../components/IngredientList/IngredientList.scss';
+import './IngredientList.scss';
+import Ingredient from '../Ingredient/Ingredient';
 
 const ingredients = props => {
   const { ingredients } = props;
@@ -10,14 +11,15 @@ const ingredients = props => {
         {ingredients ? (
           ingredients.map((ingredient, index) => (
             <li key={index} className="ingredient-row">
-              <span className="ingredient-info">
+              <Ingredient ingredient={ingredient} />
+              {/* <span className="ingredient-info">
                 {ingredient.name} - {ingredient.quantity}
               </span>
               <span className="buttons">
                 <button className="x-button">X</button>
 
                 <button className="edit-button">Edit</button>
-              </span>
+              </span> */}
             </li>
           ))
         ) : (

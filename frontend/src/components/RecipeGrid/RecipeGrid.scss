@@ -1,9 +1,15 @@
 .grid {
   display: flex;
-  flex: 50%;
-  justify-content: space-evenly;
+  //   @media screen and (min-width: 768px) {
+  align-items: flex-end;
+  //   flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 40px;
+  //   }
 
   .gridItem {
+    // margin: auto;
+
     :hover {
       color: blue;
       cursor: pointer;

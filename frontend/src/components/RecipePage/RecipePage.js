@@ -7,26 +7,28 @@ const RecipePage = () => {
   const { currentRecipe } = context.state;
 
   //   console.log(currentRecipe);
-  //   const { name, ingredients } = currentRecipe;
+  const { name, ingredients } = currentRecipe;
 
   return (
     <div className="recipe-page">
-      {/* <h1>{name}</h1> */}
-      <h1 className="recipe-header">Chicken Parm</h1>
+      <h1 className="recipe-header">{name}</h1>
+      {/* <h1 className="recipe-header">Chicken Parm</h1> */}
 
-      {/* <IngredientList ingredients={ingredients} /> */}
-      <IngredientList
+      <IngredientList ingredients={ingredients} />
+      {/* <IngredientList
         ingredients={[
           {
+            id: 1,
             name: 'Chicken',
             quantity: '2lbs'
           },
           {
+            id: 2,
             name: 'Parm',
             quantity: '10lbs'
           }
         ]}
-      />
+      /> */}
     </div>
   );
 };
