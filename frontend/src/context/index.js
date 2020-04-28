@@ -176,7 +176,7 @@ const RecipeProvider = props => {
       current.ingredients[ingredientToUpdateIndex].name = value;
       console.log('in update current');
       console.log(current);
-      setRecipes(current);
+      setCurrentRecipe(current);
     }
   };
 
