@@ -16,12 +16,16 @@ const RecipeGrid = () => {
     state.recipes.map((recipe, index) => {
       curIndex += 1;
       curRow.push(
-        <div key={index} className="gridItem">
-          <GridItem recipe={recipe} />
+        <div key={`row_element_${index}`} className="gridItem">
+          <GridItem key={`grid_item_${index}`} recipe={recipe} />
         </div>
       );
       if (curIndex === 4 || index === numRecipes) {
-        rows.push(<div className="grid">{curRow}</div>);
+        rows.push(
+          <div key={`row_${index}`} className="grid">
+            {curRow}
+          </div>
+        );
         curIndex = 0;
         curRow = [];
       }

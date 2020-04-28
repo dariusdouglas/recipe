@@ -26,10 +26,12 @@ const mockData = {
         'https://irepo.primecp.com/2014/10/199844/West-African-Chicken-Shrimp-Stir-Fry_Medium_ID-776771.jpg?v=776771',
       ingredients: [
         {
+          id: 1,
           name: 'Chicken',
           quantity: '1lbs'
         },
         {
+          id: 2,
           name: 'Brocolli',
           quantity: '.5lbs'
         }
@@ -149,8 +151,7 @@ const mockData = {
         }
       ]
     }
-  ],
-  currentRecipe: {}
+  ]
 };
 
 // Create Context object
@@ -161,22 +162,42 @@ const RecipeProvider = props => {
   // url to be used later in fetch
   // const url = '';
 
-  const setCurrentRecipe = recipe => {
-    setRecipes({ ...state, currentRecipe: recipe });
-  };
+  // const setCurrentRecipe = recipe => {
+  //   setRecipes({ ...state, currentRecipe: recipe });
+  // };
 
   const updateCurrentRecipe = (id, value) => {
-    const currentRecipe = { ...state.currentRecipe };
-    const ingredientToUpdateIndex = currentRecipe.ingredients.findIndex(
-      ingredient => ingredient.id == id
-    );
-    currentRecipe.ingredients[ingredientToUpdateIndex].name = value;
-    console.log('in update current');
-    console.log(currentRecipe);
-    setRecipes({ ...state, currentRecipe });
+    const current = { ...currentRecipe };
+    console.log(current.ingredients);
+    if (current.ingredients) {
+      const ingredientToUpdateIndex = current.ingredients.findIndex(
+        ingredient => ingredient.id == id
+      );
+      current.ingredients[ingredientToUpdateIndex].name = value;
+      console.log('in update current');
+      console.log(current);
+      setRecipes(current);
+    }
   };
 
-  const [state, setRecipes] = useState([{ recipes: [], currentRecipe: () => {} }]);
+  const deleteCurrentIngredient = id => {
+    console.log('id', id);
+    console.log('in delete');
+    const current = { ...currentRecipe };
+
+    console.log('current', current.ingredients);
+    if (current.ingredients) {
+      const indexToDelete = current.ingredients.findIndex(ingredient => ingredient.id == id);
+
+      current.ingredients.splice(indexToDelete, 1);
+      console.log('current', current.ingredients);
+
+      setCurrentRecipe(current);
+    }
+  };
+
+  const [state, setRecipes] = useState([{ recipes: [] }]);
+  const [currentRecipe, setCurrentRecipe] = useState({ currentRecipe: {} });
 
   const fetcheRecipes = async () => {
     // const response = await fetch(url);
@@ -188,10 +209,18 @@ const RecipeProvider = props => {
 
   useEffect(() => {
     fetcheRecipes();
-  }, []);
+  }, [currentRecipe]);
 
   return (
-    <RecipeContext.Provider value={{ state, setCurrentRecipe, updateCurrentRecipe }}>
+    <RecipeContext.Provider
+      value={{
+        state,
+        currentRecipe,
+        setCurrentRecipe,
+        updateCurrentRecipe,
+        deleteCurrentIngredient
+      }}
+    >
       {props.children}
     </RecipeContext.Provider>
   );

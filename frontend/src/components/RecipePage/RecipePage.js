@@ -4,7 +4,7 @@ import IngredientList from '../IngredientList/IngredientList';
 import './RecipePage.scss';
 const RecipePage = () => {
   const context = useContext(RecipeContext);
-  const { currentRecipe } = context.state;
+  const { currentRecipe } = context;
 
   //   console.log(currentRecipe);
   const { name, ingredients } = currentRecipe;
@@ -14,7 +14,11 @@ const RecipePage = () => {
       <h1 className="recipe-header">{name}</h1>
       {/* <h1 className="recipe-header">Chicken Parm</h1> */}
 
-      <IngredientList ingredients={ingredients} />
+      {ingredients && ingredients.length > 0 ? (
+        <IngredientList ingredients={ingredients} />
+      ) : (
+        <p>No recipes</p>
+      )}
       {/* <IngredientList
         ingredients={[
           {

@@ -8,9 +8,9 @@ const ingredients = props => {
   return (
     <div className="ingredientsSection">
       <ul>
-        {ingredients ? (
+        {ingredients && ingredients.length > 0 ? (
           ingredients.map((ingredient, index) => (
-            <li key={index} className="ingredient-row">
+            <li key={`ingredient_li_${index}`} className="ingredient-row">
               <Ingredient ingredient={ingredient} />
               {/* <span className="ingredient-info">
                 {ingredient.name} - {ingredient.quantity}

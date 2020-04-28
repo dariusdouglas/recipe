@@ -15,7 +15,7 @@ const GridItem = props => {
   }
 
   const ingredients = recipe.ingredients.map((ingredient, index) => (
-    <p key={index} className="ingredient">
+    <p key={`ingredient_${index}`} className="ingredient">
       {ingredient.name} - {ingredient.quantity}
     </p>
   ));
