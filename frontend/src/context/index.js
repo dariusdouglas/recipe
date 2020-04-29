@@ -5,6 +5,8 @@ const mockData = {
     {
       name: 'Chicken Parm',
       slug: 'chicken_parm',
+      prep_time: '25 mins',
+      category: 'Comfort',
       image: 'https://s3-media0.fl.yelpcdn.com/bphoto/Rif9rZ9TMEhaYwyFEyE24A/o.jpg',
       ingredients: [
         {
@@ -22,6 +24,8 @@ const mockData = {
     {
       name: 'Stir Fry',
       slug: 'stir_fry',
+      prep_time: '25 mins',
+      category: 'Comfort',
       image:
         'https://irepo.primecp.com/2014/10/199844/West-African-Chicken-Shrimp-Stir-Fry_Medium_ID-776771.jpg?v=776771',
       ingredients: [
@@ -38,8 +42,10 @@ const mockData = {
       ]
     },
     {
-      name: 'Stir Fry',
+      name: 'Deep Dish Pizza',
       slug: 'stir_fry',
+      prep_time: '25 mins',
+      category: 'Comfort',
       image: 'https://giordanos.com/wp-content/uploads/Hero-image_1210-v2.jpg',
       ingredients: [
         {
@@ -53,10 +59,12 @@ const mockData = {
       ]
     },
     {
-      name: 'Stir Fry',
+      name: 'Psychedelic Salad Rolls',
       slug: 'stir_fry',
+      prep_time: '25 mins',
+      category: 'Comfort',
       image:
-        'https://irepo.primecp.com/2014/10/199844/West-African-Chicken-Shrimp-Stir-Fry_Medium_ID-776771.jpg?v=776771',
+        'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBuPXid.img?h=832&w=1598&m=6&q=60&u=t&o=f&l=f',
       ingredients: [
         {
           id: 1,
@@ -71,10 +79,12 @@ const mockData = {
       ]
     },
     {
-      name: 'Stir Fry',
+      name: 'Beauty in a Bowl',
       slug: 'stir_fry',
+      prep_time: '25 mins',
+      category: 'Comfort',
       image:
-        'https://irepo.primecp.com/2014/10/199844/West-African-Chicken-Shrimp-Stir-Fry_Medium_ID-776771.jpg?v=776771',
+        'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBuPZGo.img?h=832&w=1598&m=6&q=60&u=t&o=f&l=f',
       ingredients: [
         {
           name: 'Chicken',
@@ -87,10 +97,12 @@ const mockData = {
       ]
     },
     {
-      name: 'Stir Fry',
+      name: 'Taste the Rainbow',
       slug: 'stir_fry',
+      prep_time: '25 mins',
+      category: 'Comfort',
       image:
-        'https://irepo.primecp.com/2014/10/199844/West-African-Chicken-Shrimp-Stir-Fry_Medium_ID-776771.jpg?v=776771',
+        'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBuQ21t.img?h=832&w=1598&m=6&q=60&u=t&o=f&l=f',
       ingredients: [
         {
           name: 'Chicken',
@@ -103,10 +115,12 @@ const mockData = {
       ]
     },
     {
-      name: 'Stir Fry',
+      name: 'Super Soup',
       slug: 'stir_fry',
+      prep_time: '25 mins',
+      category: 'Comfort',
       image:
-        'https://irepo.primecp.com/2014/10/199844/West-African-Chicken-Shrimp-Stir-Fry_Medium_ID-776771.jpg?v=776771',
+        'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBuPnt8.img?h=832&w=1598&m=6&q=60&u=t&o=f&l=f',
       ingredients: [
         {
           name: 'Chicken',
@@ -119,10 +133,12 @@ const mockData = {
       ]
     },
     {
-      name: 'Stir Fry',
+      name: 'Starry-eyed dessert',
       slug: 'stir_fry',
+      prep_time: '25 mins',
+      category: 'Comfort',
       image:
-        'https://irepo.primecp.com/2014/10/199844/West-African-Chicken-Shrimp-Stir-Fry_Medium_ID-776771.jpg?v=776771',
+        'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBuPlgL.img?h=832&w=1598&m=6&q=60&u=t&o=f&l=f',
       ingredients: [
         {
           name: 'Chicken',
@@ -135,10 +151,12 @@ const mockData = {
       ]
     },
     {
-      name: 'Stir Fry',
+      name: 'Cookie Cup',
       slug: 'stir_fry',
+      prep_time: '25 mins',
+      category: 'Comfort',
       image:
-        'https://irepo.primecp.com/2014/10/199844/West-African-Chicken-Shrimp-Stir-Fry_Medium_ID-776771.jpg?v=776771',
+        'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBuQ1ZJ.img?h=832&w=1598&m=6&q=60&u=t&o=f&l=f',
       ingredients: [
         {
           name: 'Chicken',

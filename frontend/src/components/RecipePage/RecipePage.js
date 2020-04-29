@@ -17,7 +17,7 @@ const RecipePage = () => {
       {ingredients && ingredients.length > 0 ? (
         <IngredientList ingredients={ingredients} />
       ) : (
-        <p>No recipes</p>
+        <p>No Ingredients</p>
       )}
       {/* <IngredientList
         ingredients={[

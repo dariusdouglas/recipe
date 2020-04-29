@@ -27,7 +27,10 @@ const GridItem = props => {
         <div className="item-name">
           <h3>{recipe.name}</h3>
         </div>
-        <div className="ingredients-list">{ingredients}</div>
+        <div className="ingredients-list">
+          <p className="ingredient"> Prep time: {recipe.prep_time}</p>
+          <p className="ingredient"> Category: {recipe.category}</p>
+        </div>
       </div>
     </RecipeProvider>
   );

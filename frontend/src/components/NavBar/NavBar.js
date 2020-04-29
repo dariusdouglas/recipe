@@ -5,20 +5,20 @@ const NavBar = () => {
   return (
     <>
       <div class="navbar">
-        <span className="nav-title">Recipe Book</span>
+        {/* <span className="nav-title">Recipe Book</span> */}
 
         <ul>
           <li>
-            <a href="">Home</a>
+            <a href="">Recipes</a>
           </li>
           <li>
-            <a href="">Home</a>
+            <a href="">Healthy</a>
           </li>
           <li>
-            <a href="">Home</a>
+            <a href="">Comfort</a>
           </li>
           <li>
-            <a href="">Home</a>
+            <a href="">Dessert</a>
           </li>
         </ul>
       </div>
