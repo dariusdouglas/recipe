@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  border: 1px solid black;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  box-shadow: 2px 1px 4px 1px;
+  background-color: rgba(19, 152, 192, 0.74);
+  background: linear-gradient(rgba(19, 45, 192, 0.74), rgba(19, 152, 192, 0.74));
+  margin: 0 10px 20px 10px;
+
+  .nav-title {
+    margin: auto 0px auto 15px;
+    font-size: 25px;
+  }
+
+  ul {
+    li {
+      display: inline-block;
+      margin-right: 20px;
+      a {
+        text-decoration: none;
+        color: #1d2840;
+      }
+    }
+  }
+}

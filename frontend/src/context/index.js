@@ -40,8 +40,7 @@ const mockData = {
     {
       name: 'Stir Fry',
       slug: 'stir_fry',
-      image:
-        'https://irepo.primecp.com/2014/10/199844/West-African-Chicken-Shrimp-Stir-Fry_Medium_ID-776771.jpg?v=776771',
+      image: 'https://giordanos.com/wp-content/uploads/Hero-image_1210-v2.jpg',
       ingredients: [
         {
           name: 'Chicken',
