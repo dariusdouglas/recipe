@@ -4,21 +4,21 @@ import './NavBar.scss';
 const NavBar = () => {
   return (
     <>
-      <div class="navbar">
+      <div className="navbar">
         {/* <span className="nav-title">Recipe Book</span> */}
 
         <ul>
           <li>
-            <a href="">Recipes</a>
+            <a href="/">Recipes</a>
           </li>
           <li>
-            <a href="">Healthy</a>
+            <a href="/">Healthy</a>
           </li>
           <li>
-            <a href="">Comfort</a>
+            <a href="/">Comfort</a>
           </li>
           <li>
-            <a href="">Dessert</a>
+            <a href="/">Dessert</a>
           </li>
         </ul>
       </div>

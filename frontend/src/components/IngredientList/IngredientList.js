@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { RecipeContext } from '../../context/index';
+import React from 'react';
 import './IngredientList.scss';
 import Ingredient from '../Ingredient/Ingredient';
 

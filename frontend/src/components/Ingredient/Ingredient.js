@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import './Ingredient.scss';
 import { RecipeContext } from '../../context/index';
-import ingredients from '../IngredientList/IngredientList';
 
 const Ingredient = props => {
   const [isEditing, toggleEdit] = useState(false);
@@ -9,11 +8,11 @@ const Ingredient = props => {
   const state = useContext(RecipeContext);
 
   const handleChange = e => {
-    state.updateCurrentRecipe(e.target.id, e.target.value);
+    state.updateCurrentRecipe(ingredient.name, e.target.value);
   };
 
   const handleDelete = e => {
-    state.deleteCurrentIngredient(ingredient.id);
+    state.deleteCurrentIngredient(ingredient.name);
   };
 
   return (
@@ -35,11 +34,7 @@ const Ingredient = props => {
             {ingredient.name} - {ingredient.quantity}
           </span>
           <span className="buttons">
-            <button
-              className="x-button"
-              ingredient-id={ingredient.id}
-              onClick={() => handleDelete()}
-            >
+            <button className="x-button" ingredient-id={ingredient.id} onClick={handleDelete}>
               X
             </button>
 

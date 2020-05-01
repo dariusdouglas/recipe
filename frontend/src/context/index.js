@@ -183,33 +183,75 @@ const RecipeProvider = props => {
   //   setRecipes({ ...state, currentRecipe: recipe });
   // };
 
-  const updateCurrentRecipe = (id, value) => {
+  const updateCurrentRecipe = (name, value) => {
     const current = { ...currentRecipe };
-    console.log(current.ingredients);
+
     if (current.ingredients) {
       const ingredientToUpdateIndex = current.ingredients.findIndex(
-        ingredient => ingredient.id == id
+        ingredient => ingredient.name === name
       );
       current.ingredients[ingredientToUpdateIndex].name = value;
-      console.log('in update current');
-      console.log(current);
+
       setCurrentRecipe(current);
+
+      fetch('http://localhost:5000/edit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name: current.name, ingredients: current.ingredients })
+      })
+        .then(response => response.json())
+        .then(data => console.log('success', data))
+        .catch(error => {
+          console.log('Error', error);
+        });
     }
   };
 
-  const deleteCurrentIngredient = id => {
-    console.log('id', id);
-    console.log('in delete');
+  const addIngredient = ingredients => {
+    // recipe.ingredients.push()
     const current = { ...currentRecipe };
+    current.ingredients.push(ingredients);
 
-    console.log('current', current.ingredients);
+    setCurrentRecipe(current);
+
+    fetch('http://localhost:5000/add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name: current.name, ingredients: current.ingredients })
+    })
+      .then(response => response.json())
+      .then(data => console.log('success', data))
+      .catch(error => {
+        console.log('Error', error);
+      });
+  };
+
+  const deleteCurrentIngredient = async name => {
+    let current = { ...currentRecipe };
+
     if (current.ingredients) {
-      const indexToDelete = current.ingredients.findIndex(ingredient => ingredient.id == id);
+      const indexToDelete = current.ingredients.findIndex(ingredient => ingredient.name === name);
 
       current.ingredients.splice(indexToDelete, 1);
-      console.log('current', current.ingredients);
 
       setCurrentRecipe(current);
+
+      fetch('http://localhost:5000/delete', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name: current.name, ingredients: current.ingredients })
+      })
+        .then(response => response.json())
+        .then(data => console.log('success', data))
+        .catch(error => {
+          console.log('Error', error);
+        });
     }
   };
 
@@ -217,11 +259,10 @@ const RecipeProvider = props => {
   const [currentRecipe, setCurrentRecipe] = useState({ currentRecipe: {} });
 
   const fetcheRecipes = async () => {
-    // const response = await fetch(url);
-    // const recipeData = response.json();
-    const recipeData = mockData;
+    const response = await fetch('http://localhost:5000');
+    const recipeData = await response.json();
 
-    setRecipes(recipeData);
+    setRecipes({ recipes: recipeData });
   };
 
   useEffect(() => {
@@ -235,6 +276,7 @@ const RecipeProvider = props => {
         currentRecipe,
         setCurrentRecipe,
         updateCurrentRecipe,
+        addIngredient,
         deleteCurrentIngredient
       }}
     >

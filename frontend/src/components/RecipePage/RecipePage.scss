@@ -1,7 +1,46 @@
 .recipe-page {
-  .recipe-header {
-    margin-left: 50px;
-    margin-top: 40px;
-    font-family: Times, 'Times New Roman', Georgia, serif;
+  .noIngredients {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    .recipe-header {
+      margin-left: 50px;
+      font-family: Times, 'Times New Roman', Georgia, serif;
+    }
+
+    .addButton {
+      font-weight: bolder;
+      height: 20px;
+      width: 50px;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-right: 50px;
+    }
+  }
+
+  .inputForm {
+    display: flex;
+    justify-content: center;
+
+    .input {
+      margin-left: 15px;
+
+      input {
+        border-radius: 5px;
+      }
+    }
+
+    button {
+      margin-left: 5px;
+      background-color: rgb(0, 110, 255);
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+    }
   }
 }

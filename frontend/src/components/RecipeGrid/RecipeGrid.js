@@ -29,8 +29,6 @@ const RecipeGrid = () => {
         curIndex = 0;
         curRow = [];
       }
-
-      console.log(rows);
     })
   ) : (
     <p> Loading Recipes </p>

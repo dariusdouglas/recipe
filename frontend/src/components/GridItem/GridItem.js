@@ -7,32 +7,23 @@ const GridItem = props => {
   const history = useHistory();
   const { recipe } = props;
   const state = useContext(RecipeContext);
-  console.log(state);
 
   function handleClick() {
     state.setCurrentRecipe(recipe);
     history.push(`/${recipe.slug}`);
   }
 
-  const ingredients = recipe.ingredients.map((ingredient, index) => (
-    <p key={`ingredient_${index}`} className="ingredient">
-      {ingredient.name} - {ingredient.quantity}
-    </p>
-  ));
-
   return (
-    <RecipeProvider>
-      <div className="grid-card" onClick={handleClick}>
-        <img src={recipe.image} />
-        <div className="item-name">
-          <h3>{recipe.name}</h3>
-        </div>
-        <div className="ingredients-list">
-          <p className="ingredient"> Prep time: {recipe.prep_time}</p>
-          <p className="ingredient"> Category: {recipe.category}</p>
-        </div>
+    <div className="grid-card" onClick={handleClick}>
+      <img src={recipe.image} alt={`${recipe.name}`} />
+      <div className="item-name">
+        <h3>{recipe.name}</h3>
       </div>
-    </RecipeProvider>
+      <div className="ingredients-list">
+        <p className="ingredient"> Prep time: {recipe.prep_time}</p>
+        <p className="ingredient"> Category: {recipe.category}</p>
+      </div>
+    </div>
   );
 };
 
